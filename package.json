@@ -9,9 +9,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@studio-freight/lenis": "^1.0.42",
     "animate.css": "^4.1.1",
     "aos": "^2.3.4",
+    "gsap": "^3.12.5",
     "jquery": "^3.7.1",
+    "lenis": "^1.1.13",
     "vue": "^3.3.11",
     "vue-preloader": "^1.1.4",
     "vue-router": "^4.2.5"

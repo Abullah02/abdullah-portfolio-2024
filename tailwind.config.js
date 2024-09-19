@@ -11,6 +11,8 @@ export default {
       colors: {
         "primary": 'var(--primary)',
         "secondary": 'var(--secondary)',
+        "text-color": 'var(--text-color)',
+        "regular-text-color": 'var(--regular-text-color)',
       },
       // screens: {
       //   'mini': '393px',
