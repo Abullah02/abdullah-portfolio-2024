@@ -32,7 +32,7 @@
   </div> -->
   <div>
     <!-- <Header /> -->
-    <section class="flex items-center justify-between px-2 py-8">
+    <section class="flex items-center justify-between px-2 pt-8">
       <div>Abdullah Suri</div>
       <div>
         <div class="container">
@@ -65,7 +65,21 @@
         </h1>
         <span class="max-w-[32.5rem] custom-font text-regular-text-color hero-para">
           <span class="uppercase text-text-color mr-4">About</span>
-          I am a developer based in Karachi, Pakistan focused on creating interactive digital experiences on the web, working with brands and industry leaders such as Google Fonts, Paystack, Printivo, Disney, Jelly, and Null amongst others to achieve this.</span>
+          I am a developer based in Karachi, Pakistan focused on creating interactive digital experiences on the web, working with brands and industry leaders such as Google Fonts, Paystack, Printivo, Disney, Jelly, and Null amongst others to achieve this.
+          <span class="flex items-center justify-between pt-24 pr-10">
+            <span>Scroll Down</span>
+              <div id="wrapper-inner">
+                <div id="scroll-down">
+                  <span class="arrow-down">
+                  <!-- css generated icon -->
+                  </span>
+                  <!-- <span id="scroll-title">
+                    Scroll down
+                  </span> -->
+                </div>
+              </div>
+          </span>
+        </span>
       </div>
     </section>
     <div class="h-screen w-screen"></div>
@@ -388,4 +402,14 @@ export default {
   text-align: center;
 }
 
+.scroll_down_infinite .scroll_down_arrow {
+  transform: translateY(-100%);
+ animation: infiniteArrow 1s infinite cubic-bezier(.175,.885,.32,1.275);
+}
+
+@keyframes infiniteArrow {
+  to {
+    transform: translateY(0);
+  }
+}
 </style>
