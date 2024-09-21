@@ -55,7 +55,7 @@ html {
   .button {
     position: relative;
     z-index: 0;
-    width: 200px;
+    width: 220px;
     height: 56px;
     text-decoration: none;
     font-size: 14px;
@@ -208,8 +208,8 @@ html {
   .button__drow2,
   .button__drow2::before,
   .button__drow2::after {
-    /* background: var(--regular-text-color); */
-    background: #282828;
+    background: #313c0e;
+    /* background: #282828; */
   }
   .button:hover .button__drow1 {
     animation: drow1 ease-in 0.06s;
