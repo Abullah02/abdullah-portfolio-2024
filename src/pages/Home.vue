@@ -33,8 +33,11 @@
   <SiteLoader v-if="aaa" />
   <div>
     <!-- <Header /> -->
-    <section class="flex items-center justify-between px-16 pt-8">
-      <div>Abdullah Suri</div>
+    <section ref="header" class="flex items-center justify-between px-16 pt-8">
+      <div class="flex items-center">
+        <span class="abudllah inline-block relative overflow-hidden">Abdullah</span>
+        <span>Suri</span>
+      </div>
       <div>
         <div class="container">
           <a href="Abdullah-Resume.pdf" download class="button type--C">
@@ -49,38 +52,44 @@
     </section>
     <!-- Hero Section -->
     <section class="relative overflow-hidden flex justify-center flex-col h-screen px-16">
-      <div class="flex items-center justify-between gap-5">
-        <h1 ref="heading" id="HeroRightHeading">
-          <span v-for="letter in frontLetters" class="hover:text-regular-text-color transition-all duration-300">{{ letter }}</span>
-        </h1>
-        <h1 ref="heading" id="frontendSeperator">
-          <span v-for="letter in dashes">{{ letter }}</span>          
-        </h1>
-        <h1 ref="heading" id="HeroLeftHeading">
-          <span v-for="letter in endLetters" class="hover:text-regular-text-color transition-all duration-300">{{ letter }}</span>
-        </h1>
+      <div class="overflow-hidden">
+        <div ref="headingContainer" class="relative flex items-center justify-between gap-5"> <!--data-aos="fade-up" data-aos-duration="500"-->
+          <h1 ref="heading" id="HeroRightHeading">
+            <span v-for="letter in frontLetters" class="hover:text-regular-text-color transition-all duration-300">{{ letter }}</span>
+          </h1>
+          <h1 ref="heading" id="frontendSeperator">
+            <span v-for="letter in dashes">{{ letter }}</span>          
+          </h1>
+          <h1 ref="heading" id="HeroLeftHeading">
+            <span v-for="letter in endLetters" class="hover:text-regular-text-color transition-all duration-300">{{ letter }}</span>
+          </h1>
+        </div>
       </div>
-      <div class="flex items-center justify-between">
-        <h1 ref="heading">
-          <span v-for="letter in devLetters" class="hover:text-regular-text-color transition-all duration-300">{{ letter }}</span>
-        </h1>
-        <span class="max-w-[32.5rem] custom-font text-regular-text-color hero-para">
-          <span class="uppercase text-text-color mr-4">About</span>
-          I am a developer based in Karachi, Pakistan, focused on crafting engaging and interactive digital experiences on the web. With a passion for innovation, I have collaborated with a diverse range of brands and industry leaders to deliver exceptional results.
-          <span class="flex items-center justify-between pt-24 pr-10">
-            <span>Scroll Down</span>
-              <div id="wrapper-inner">
-                <div id="scroll-down">
-                  <span class="arrow-down">
-                  <!-- css generated icon -->
-                  </span>
-                  <!-- <span id="scroll-title">
-                    Scroll down
-                  </span> -->
+
+      <div class="overflow-hidden">
+        <div ref="headingContainerTwo" class="relative flex items-center justify-between">
+          <h1 ref="heading">
+            <span v-for="letter in devLetters" class="hover:text-regular-text-color transition-all duration-300">{{ letter }}</span>
+          </h1>
+          <span class="max-w-[32.5rem] custom-font text-regular-text-color hero-para">
+            <span class="uppercase text-text-color mr-4">About</span>
+            I am a developer based in Karachi, Pakistan, focused on crafting engaging and interactive digital experiences on the web. With a passion for innovation, I have collaborated with a diverse range of brands and industry leaders to deliver exceptional results.
+            <span class="flex items-center justify-between pt-24 pr-10">
+              <span>Scroll Down</span>
+                <div id="wrapper-inner">
+                  <div id="scroll-down">
+                    <span class="arrow-down">
+                    <!-- css generated icon -->
+                    </span>
+                    <!-- <span id="scroll-title">
+                      Scroll down
+                    </span> -->
+                  </div>
                 </div>
-              </div>
+            </span>
           </span>
-        </span>
+          <div ref="blackStripTwo" class="absolute bg-[#111111] right-0 left-0 bottom-0 w-[2000px] h-[50px]"></div>
+        </div>
       </div>
     </section>
     <!-- Portfolio Section -->
@@ -93,11 +102,11 @@
       <!-- project 1  -->
       <div class="relative overflow-hidden py-20">
         <div class="absolute right-0 top-2 w-full custom-font flex items-center justify-between">
-          <span>
+          <span ref="featureProject">
             FEATURED
             PROJECTS (4)
           </span>
-          <span class="tracking-normal text-[1.7rem] custom-font capitalize flex items-center gap-1.5">
+          <span ref="associatedOne" class="tracking-normal text-[1.7rem] custom-font capitalize flex items-center gap-1.5">
             <img src="@/assets/teksyo_logo.jfif" class="size-12" alt="">
             <a href="https://www.teksyo.com/" target="_blank">Associated with Teksyo (Pvt) Ltd</a>
           </span>
@@ -117,7 +126,7 @@
 
       <!-- Project 2 -->
       <div class="relative overflow-hidden py-20">
-        <span class="absolute top-2 tracking-normal text-[1.7rem] custom-font capitalize flex items-center gap-1.5">
+        <span ref="associatedTwo" class="absolute top-2 tracking-normal text-[1.7rem] custom-font capitalize flex items-center gap-1.5">
           <img src="@/assets/teksyo_logo.jfif" class="size-12" alt="">
           <a href="https://www.teksyo.com/" target="_blank">Associated with Teksyo (Pvt) Ltd</a>
         </span>
@@ -133,7 +142,7 @@
 
       <!-- Project 3 -->
       <div class="relative overflow-hidden py-20">
-        <span class="absolute right-0 top-2 tracking-normal text-[1.7rem] custom-font capitalize flex items-center gap-1.5">
+        <span ref="associatedThree" class="absolute right-0 top-2 tracking-normal text-[1.7rem] custom-font capitalize flex items-center gap-1.5">
           <img src="@/assets/teksyo_logo.jfif" class="size-12" alt="">
           <a href="https://www.teksyo.com/" target="_blank">Associated with Teksyo (Pvt) Ltd</a>
         </span>
@@ -163,7 +172,7 @@
         <div class="relative w-full h-px bg-transparent">
           <span ref="contactHeadingLinesOne" class="absolute h-px w-full bg-[#777] origin-left left-0"></span>
         </div>
-        <h2 ref="contactHeading" class="whitespace-nowrap !my-36 custom-link">"LET’S TALK — LET’S COLLABORATE — SAY HELLO — WANNA BE STARTING SOMETHING?""</h2>
+        <h2 ref="contactHeading" class="whitespace-nowrap !my-36 custom-link">"LET’S TALK — LET’S COLLABORATE — SAY HELLO — WANNA BE STARTING SOMETHING?"</h2>
         <!-- Right ro Left bar -->
         <div class="relative w-full h-px bg-transparent">
           <span ref="contactHeadingLinesTwo" class="absolute h-px w-full bg-[#777] origin-right left-0"></span>
@@ -509,6 +518,108 @@ export default {
           }
         );
 
+        gsap.fromTo(
+          this.$refs.associatedOne,
+          { x: 400, opacity: 0 }, 
+          {
+            x: 0, 
+            opacity: 1,
+            duration: 1.6,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: this.$refs.associatedOne,
+              start: "0 100%",  
+              end: "50% 60%",    
+              // scrub: 1,         
+              markers: false
+            }
+          }
+        );
+
+        gsap.fromTo(
+          this.$refs.associatedTwo,
+          { x: -400, opacity: 0 }, 
+          {
+            x: 0,
+            opacity: 1,
+            duration: 1.6,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: this.$refs.associatedTwo,
+              start: "0 100%",  
+              end: "50% 60%",    
+              // scrub: 1,         
+              markers: false
+            }
+          }
+        );
+
+        gsap.fromTo(
+          this.$refs.associatedThree,
+          { x: 400, opacity: 0 }, 
+          {
+            x: 0,
+            opacity: 1, 
+            duration: 1.6,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: this.$refs.associatedThree,
+              start: "0 100%",  
+              end: "50% 60%",    
+              // scrub: 1,         
+              markers: false
+            }
+          }
+        );
+
+        gsap.fromTo(
+          this.$refs.featureProject,
+          { opacity: 0 }, 
+          {
+            opacity: 1, 
+            duration: 1.6,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: this.$refs.featureProject,
+              start: "0 100%",  
+              end: "50% 60%",    
+              // scrub: 1,         
+              markers: false
+            }
+          }
+        );
+        
+        gsap.fromTo(
+          this.$refs.headingContainer,
+          { y: 400 }, 
+          {
+            y: 0, 
+            duration: 1.2,
+            ease: "power3.out",
+          }
+        );
+
+        gsap.fromTo(
+          this.$refs.headingContainerTwo,
+          { y: 400 }, 
+          {
+            y: 0, 
+            delay: .2,
+            duration: 1.3,
+            ease: "power3.out",
+          }
+        );
+
+        gsap.fromTo(
+          this.$refs.header,
+          { y: -400 }, 
+          {
+            y: 0, 
+            duration: .9,
+            ease: "power3.out",
+          }
+        );
+
         // Add event listeners to pause and resume on hover
         contactHeading.addEventListener('mouseenter', () => {
           gsap.globalTimeline.pause(); // Pause all animations on hover
@@ -697,6 +808,22 @@ export default {
 </script>
 
 <style scoped>
+.abudllah::after {
+  background-color: #fff;
+  border-radius: 50%;
+  content: "";
+  height: 7rem;
+  position: absolute;
+  -webkit-transform: translateY(-100%) scale(0);
+  transform: translateY(-100%) scale(0);
+  transition: all 0.6s cubic-bezier(0.075,0.82,0.165,1);
+  width: 7rem !important;
+}
+
+.abudllah:hover.abudllah::after {
+  transform: translateY(-100%) scale(1);
+}
+
 .section {
   height: 100vh;
   display: flex;
