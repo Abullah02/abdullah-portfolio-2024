@@ -90,17 +90,23 @@
       </div>
 
       <!-- project 1  -->
-      <div class="overflow-hidden py-20">
-        <h2 ref="portfolioHeadingLeftOne" class="whitespace-nowrap">Elegant Elefant: law for all. we got an elefant's memory for the law, and can't wait to help you access it!</h2>
+      <div class="relative overflow-hidden py-20">
+        <h2 ref="portfolioHeadingLeftOne" class="whitespace-nowrap">
+          <a href="https://elefant.net.ai/" target="_blank" class="custom-link transition-all duration-500">Elegant Elefant: law for all. We got an elefant's memory for the law, and can't wait to help you access it!</a>
+        </h2>
       </div>
+      
 
       <!-- Left ro right bar -->
       <div class="relative w-full h-px bg-transparent">
         <span ref="RightToleftLine" class="absolute h-px w-full bg-[#777] origin-right"></span>
       </div>
 
+      <!-- Project 2 -->
       <div class="overflow-hidden py-20">
-        <h2 ref="portfolioHeadingRightOne" class="whitespace-nowrap">Teksyo - Creating Million-Dollar Websites & AI SaaS for Startup Ideas</h2>
+        <h2 ref="portfolioHeadingRightOne" class="whitespace-nowrap">
+          <a href="https://www.teksyo.com/" target="_blank" class="custom-link transition-all duration-500">Teksyo - Creating Million-Dollar Websites & AI SaaS for Startup Ideas</a>
+        </h2>
       </div>
       
       <!-- Left ro right bar -->
@@ -108,8 +114,11 @@
         <span ref="leftToRightLineTwo" class="absolute h-px w-full bg-[#777] origin-left"></span>
       </div>
 
+      <!-- Project 3 -->
       <div class="overflow-hidden py-20">
-        <h2 ref="portfolioHeadingLeftTwo" class="whitespace-nowrap">platypus dreaming - Chanting of the Rainforest</h2>
+        <h2 ref="portfolioHeadingLeftTwo" class="whitespace-nowrap">
+          <a href="https://platypusdreaming.com.au/" target="_blank" class="custom-link transition-all duration-500">platypus dreaming - Chanting of the Rainforest</a>
+        </h2>
       </div>
 
       <!-- Left ro right bar -->
@@ -117,8 +126,11 @@
         <span ref="leftToRightLineThree" class="absolute h-px w-full bg-[#777] origin-right"></span>
       </div>
 
+      <!-- Project 4 -->
       <div class="overflow-hidden py-20">
-        <h2 ref="portfolioHeadingRightTwo" class="whitespace-nowrap">My Old Portfolio - Abdullah Suri</h2>
+        <h2 ref="portfolioHeadingRightTwo" class="whitespace-nowrap">
+          <a href="https://abdullah-suri.netlify.app/" target="_blank" class="custom-link transition-all duration-500">My Old Portfolio - Abdullah Suri</a>
+        </h2>
       </div>
     </section>
     <!-- Contact Section -->
@@ -660,10 +672,6 @@ export default {
 </script>
 
 <style scoped>
-.scroll-animation-container {
-  height: 300vh; /* Adjust height to see scrolling effect */
-}
-
 .section {
   height: 100vh;
   display: flex;
