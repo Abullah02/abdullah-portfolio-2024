@@ -1,44 +1,8 @@
 <template>
-  <!-- site loader  -->
-  <!-- <div v-if="isLoading = false" class="w-screen h-screen">
-    <div class="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2">
-      <div class="counter">
-        <div class="counter-number">
-          <span v-for="(digit, index) in firstNumber" 
-                :key="index" 
-                class="digit" 
-                :ref="'firstNumberDigits' + index">
-            {{ digit }}
-          </span>
-        </div>
-        <div class="counter-number-second">
-          <span v-for="(digit, index) in secondNumber" 
-                :key="index" 
-                class="digit" 
-                :ref="'secondNumberDigits' + index">
-            {{ digit }}
-          </span>
-        </div>
-      </div>
-      <button @click="isLoading = false" ref="visitWebsite" class="opacity-0 top-[25px] uppercase relative inline-flex items-center leading-6 align-middle border-none after:content-[''] after:absolute after:h-0.5 after:w-full hover:after:w-0 after:end-0 hover:after:end-auto after:bottom-px after:start-0 after:duration-500 after:bg-black duration-500">
-        Visit Website
-      </button>
-    </div>
-    <div class="absolute bottom-1 left-2 uppercase !overflow-hidden">
-      <span v-for="(char, index) in splitLoadingText" :key="index" class="letter" ref="letters">
-        {{ char }}
-      </span>
-    </div>
-  </div> -->
   <SiteLoader v-if="aaa" />
   <div>
     <!-- <Header /> -->
     <section ref="header" class="flex items-center justify-between px-16 sm:pt-8 pt-[6rem] sm:mb-0 mb-[24rem]">
-      <!-- <div class="flex items-center sm:text-[2.4rem] text-[26px] abdullah-logo">
-        <span class="abudllah block relative overflow-hidden transition-all duration-200 hover-target">Abdullah</span>
-        <span class="block tracking-[-2px] px-2 logo-dash">——</span>
-        <span class="block transition-all duration-200 hover-target">Suri</span>
-      </div> -->
       <div id="logo-element" class="flex items-center sm:text-[2.4rem] text-[26px] abdullah-logo"> 
         <span ref="logoRight" class="abudllah block relative overflow-hidden transi hover-target">Abdullah</span>
         <span ref="dashSeperator" class="block tracking-[-2px] px-2 logo-dash hover-target">——</span> 
@@ -220,7 +184,7 @@
               <div class="button__drow2"></div>
             </a>
             <div class="flex items-center justify-between sm:mt-0 mt-10">
-              <div class="sm:hero-para text-[12px]">Karachi, PK <span class="text-regular-text-color ml-1">{{ getPakistanTime() }}</span> </div>
+              <div class="hero-para max-sm:text-[12px]">Karachi, PK <span class="text-regular-text-color ml-1">{{ getPakistanTime() }}</span> </div>
               <div class="flex items-center gap-5">
                 <a href="https://www.linkedin.com/in/abdullah-suri-a7b012269/" class="hover-target flex items-center justify-center sm:size-16 size-36 border rounded-full hover:border-[#313c0e] hover:bg-[#313c0e] transition-all duration-500 group">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="hover-target sm:size-8 size-16 group-hover:text-white group-hover:scale-125" fill="currentColor"><path d="M6.94048 4.99993C6.94011 5.81424 6.44608 6.54702 5.69134 6.85273C4.9366 7.15845 4.07187 6.97605 3.5049 6.39155C2.93793 5.80704 2.78195 4.93715 3.1105 4.19207C3.43906 3.44699 4.18654 2.9755 5.00048 2.99993C6.08155 3.03238 6.94097 3.91837 6.94048 4.99993ZM7.00048 8.47993H3.00048V20.9999H7.00048V8.47993ZM13.3205 8.47993H9.34048V20.9999H13.2805V14.4299C13.2805 10.7699 18.0505 10.4299 18.0505 14.4299V20.9999H22.0005V13.0699C22.0005 6.89993 14.9405 7.12993 13.2805 10.1599L13.3205 8.47993Z"></path></svg>
@@ -242,7 +206,7 @@
 <script>
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { ref, computed, onMounted, nextTick } from 'vue';
+import { nextTick } from 'vue';
 import Header from '@/components/Header.vue';
 import SiteLoader from "../components/SiteLoader.vue";
 
@@ -271,15 +235,12 @@ export default {
     },
   },
   mounted() {
-      setTimeout(() => {
-        this.isLoading = true
-      }, 3000);
       nextTick(() => {
-        this.scaleDash()
+        this.initGsapAnimation()
       });
   },
   methods: {
-    scaleDash() {
+    initGsapAnimation() {
       const logoDash = document.querySelector("#logo-element");
 
       // Hover animation
@@ -357,13 +318,13 @@ export default {
       // Animate first heading (#HeroRightHeading) sliding to the left
       gsap.fromTo(
         "#HeroRightHeading",
-        { x: 0 }, // Start state
+        { x: 0 },
         {
-          x: -400, // Move left by 400px
+          x: -400,
           duration: 1,
           scrollTrigger: {
             trigger: "#HeroRightHeading",
-            start: "top 15%", // Start when the top of the heading reaches 70% of viewport height
+            start: "top 15%",
             end: "bottom top",
             scrub: true,
             markers: false,
@@ -374,7 +335,7 @@ export default {
       // Animate the third heading (#HeroLeftHeading) sliding to the right
       gsap.fromTo(
         "#HeroLeftHeading",
-        { x: 0 }, // Start state
+        { x: 0 },
         {
           x: 400,
           duration: 1,
@@ -444,7 +405,7 @@ export default {
       // Animate Portfolio Heading Two
       gsap.fromTo(
         this.$refs.portfolioHeadingRightOne,
-        { x: -800 }, // Start state
+        { x: -800 },
         {
           x: 0,
           duration: 1,
@@ -478,7 +439,7 @@ export default {
 
       gsap.fromTo(
         this.$refs.portfolioHeadingLeftTwo,
-        { x: 800 }, // Start state
+        { x: 800 },
         {
           x: 0,
           duration: 1,
@@ -512,7 +473,7 @@ export default {
 
       gsap.fromTo(
         this.$refs.portfolioHeadingRightTwo,
-        { x: -550 }, // Start state
+        { x: -550 },
         {
           x: 0,
           duration: 1,
@@ -549,7 +510,7 @@ export default {
       const contactHeading = this.$refs.contactHeading;
       const width = contactHeading.offsetWidth;
 
-      // Create the continuous scroll effect
+      // continuous scroll effect
       gsap.to(contactHeading, {
         xPercent: -100, // Moves it to the left until it's out of view
         repeat: -1, // Infinite scroll
@@ -697,7 +658,6 @@ export default {
         }
       );
 
-      // Add event listeners to pause and resume on hover
       contactHeading.addEventListener('mouseenter', () => {
         gsap.globalTimeline.pause();
       });
@@ -709,12 +669,12 @@ export default {
     },
     getPakistanTime() {
       const formatter = new Intl.DateTimeFormat("en-US", {
-      timeZone: "Asia/Karachi",
-      hour: "numeric",
-      minute: "numeric",
-      hour12: true
-    });
-    return formatter.format(new Date());
+        timeZone: "Asia/Karachi",
+        hour: "numeric",
+        minute: "numeric",
+        hour12: true
+      });
+      return formatter.format(new Date());
     }
 
   },
@@ -722,7 +682,6 @@ export default {
 </script>
 
 <style scoped>
-
 .section {
   height: 100vh;
   display: flex;
@@ -752,7 +711,7 @@ export default {
 .counter-number, .counter-number-second {
   display: flex;
   flex-direction: column;
-  height: 50px; /* Adjust height to fit your digits */
+  height: 50px;
   overflow: hidden;
 }
 
@@ -760,7 +719,7 @@ export default {
   font-size: 3.5rem;
   font-weight: 700;
   display: block;
-  height: 50px; /* Match the height of the counter div */
+  height: 50px;
   line-height: 50px;
   text-align: center;
 }
