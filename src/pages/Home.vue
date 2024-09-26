@@ -34,11 +34,15 @@
   <div>
     <!-- <Header /> -->
     <section ref="header" class="flex items-center justify-between px-16 sm:pt-8 pt-[6rem] sm:mb-0 mb-[24rem]">
-      <div class="flex items-center sm:text-[3.4rem] text-[26px] abdullah-logo">
-        <span class="abudllah inline-block relative overflow-hidden transition-all duration-200 hover-target">Abdullah</span>
-        <span class="w-6 clear-space"></span>
-        <span class="bullet hover-target">&#8226</span>
-        <span class="transition-all duration-200 hover-target">Suri</span>
+      <!-- <div class="flex items-center sm:text-[2.4rem] text-[26px] abdullah-logo">
+        <span class="abudllah block relative overflow-hidden transition-all duration-200 hover-target">Abdullah</span>
+        <span class="block tracking-[-2px] px-2 logo-dash">——</span>
+        <span class="block transition-all duration-200 hover-target">Suri</span>
+      </div> -->
+      <div id="logo-element" class="flex items-center sm:text-[2.4rem] text-[26px] abdullah-logo"> 
+        <span ref="logoRight" class="abudllah block relative overflow-hidden transi hover-target">Abdullah</span>
+        <span ref="dashSeperator" class="block tracking-[-2px] px-2 logo-dash hover-target">——</span> 
+        <span ref="logoLeft" class="block  hover-target">Suri</span>
       </div>
       <div>
         <div class="button-container">
@@ -276,7 +280,47 @@ export default {
   },
   methods: {
     scaleDash() {
-      // Animate dash 
+      const logoDash = document.querySelector("#logo-element");
+
+      // Hover animation
+      logoDash?.addEventListener("mouseenter", () => {
+        gsap.fromTo(
+          this.$refs.dashSeperator,
+          { scaleX: 1 },  // Initial state
+          { scaleX: 2, duration: 0.5 } // End state
+        );
+        gsap.fromTo(
+          this.$refs.logoRight,
+          {x: 0},
+          {x: -10, duration: 0.5}
+        );
+        gsap.fromTo(
+          this.$refs.logoLeft,
+          {x: 0},
+          {x: 10, duration: 0.5}
+        )
+      });
+
+      // Reset animation on mouse leave
+      logoDash?.addEventListener("mouseleave", () => {
+        gsap.fromTo(
+          this.$refs.dashSeperator,
+          { scaleX: 2 },  // Current state
+          { scaleX: 1, duration: 0.5 } // Reset to original state
+        );
+        gsap.fromTo(
+          this.$refs.logoRight,
+          {x: -10},
+          {x: 0, duration: 0.5}
+        );
+        gsap.fromTo(
+          this.$refs.logoLeft,
+          {x: 10},
+          {x: 0, duration: 0.5}
+        )
+      });
+
+      // Overflow Show Hide 
       gsap.fromTo(
         this.$refs.initialHeagingHide,
         { overflow: 'hidden' },
@@ -678,40 +722,6 @@ export default {
 </script>
 
 <style scoped>
-.clear-space {
-  visibility: visible;
-}
-.abdullah-logo:hover .clear-space {
-  visibility: hidden;
-  width: 0;
-}
-.bullet {
-  visibility: hidden;
-  width: 0;
-  transition: all 0.6s cubic-bezier(0.075,0.82,0.165,1);  
-  transform: translateX(100%) scale(0);
-}
-.abdullah-logo:hover .bullet {
-  width: 13px;
-  visibility: visible;
-  transition: all 0.6s cubic-bezier(0.075,0.82,0.165,1);
-  transform: translateX(20%) scale(1);
-}
-.abdullah-logo::after {
-  background-color: #fff;
-  border-radius: 50%;
-  content: "";
-  height: 7rem;
-  position: absolute;
-  -webkit-transform: translateY(-100%) scale(0);
-  transform: translateY(-100%) scale(0);
-  transition: all 0.6s cubic-bezier(0.075,0.82,0.165,1);
-  width: 7rem !important;
-}
-
-.abudllah:hover.abudllah::after {
-  transform: translateY(-100%) scale(1);
-}
 
 .section {
   height: 100vh;
