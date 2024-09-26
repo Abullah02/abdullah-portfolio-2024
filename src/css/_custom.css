@@ -10,7 +10,11 @@ body, html {
     color: var(--text-color);
     background-color: var(--body-background);
     user-select: none;
-    /* cursor: none; */
+    cursor: none;
+}
+a {
+  user-select: none;
+    cursor: none;
 }
 body {
     font-size: 1.6rem;
