@@ -33,13 +33,13 @@
   <SiteLoader v-if="aaa" />
   <div>
     <!-- <Header /> -->
-    <section ref="header" class="flex items-center justify-between px-16 pt-8">
-      <div class="flex items-center">
+    <section ref="header" class="flex items-center justify-between px-16 sm:pt-8 pt-[6rem] sm:mb-0 mb-[24rem]">
+      <div class="flex items-center sm:text-[3.4rem] text-[26px]">
         <span class="abudllah inline-block relative overflow-hidden">Abdullah</span>
         <span>Suri</span>
       </div>
       <div>
-        <div class="container">
+        <div class="button-container">
           <a href="Abdullah-Resume.pdf" download class="button type--C">
             <div class="button__line"></div>
             <div class="button__line"></div>
@@ -50,8 +50,9 @@
         </div>
       </div>
     </section>
-    <!-- Hero Section -->
-    <section class="relative overflow-hidden flex justify-center flex-col h-screen px-16">
+    
+    <!-- Hero Section Desktop -->
+    <section class="relative overflow-hidden sm:flex justify-center flex-col h-screen px-16 hidden">
       <div class="overflow-hidden">
         <div ref="headingContainer" class="relative flex items-center justify-between gap-5"> <!--data-aos="fade-up" data-aos-duration="500"-->
           <h1 ref="heading" id="HeroRightHeading">
@@ -88,26 +89,53 @@
                 </div>
             </span>
           </span>
-          <div ref="blackStripTwo" class="absolute bg-[#111111] right-0 left-0 bottom-0 w-[2000px] h-[50px]"></div>
         </div>
       </div>
     </section>
+
+    <!-- Hero Section Mobile -->
+    <section class="relative overflow-hidden px-16 sm:hidden text-[160px] leading-[.9] tracking-[-.05em] break-words">
+      Front
+      <br>
+      <span v-for="letter in dashes">{{ letter }}</span>  End
+      <br>
+      developer
+
+      <div class="custom-font text-regular-text-color text-[17px] tracking-[0px] leading-relaxed mt-[32rem]">
+        <span class="uppercase text-text-color mr-4">About</span>
+        I am a developer based in Karachi, Pakistan, focused on crafting engaging and interactive digital experiences on the web. With a passion for innovation, I have collaborated with a diverse range of brands and industry leaders to deliver exceptional results.
+        <span class="flex items-center justify-between pt-[12rem] pr-10">
+          <span>Scroll Down</span>
+            <div id="wrapper-inner">
+              <div id="scroll-down">
+                <span class="arrow-down">
+                <!-- css generated icon -->
+                </span>
+                <!-- <span id="scroll-title">
+                  Scroll down
+                </span> -->
+              </div>
+            </div>
+        </span>
+      </div>
+    </section>
+
     <!-- Portfolio Section -->
-    <section class="px-16 uppercase">
+    <section class="px-16 uppercase sm:mt-0 mt-[42rem]">
       <!-- Left ro right bar -->
       <div class="relative w-full h-px bg-transparent">
         <span ref="leftToRightLineOne" class="absolute h-px w-full bg-[#777] origin-left"></span>
       </div>
 
       <!-- project 1  -->
-      <div class="relative overflow-hidden py-20">
+      <div class="relative overflow-hidden sm:py-20 py-[24rem]" >
         <div class="absolute right-0 top-2 w-full custom-font flex items-center justify-between">
-          <span ref="featureProject">
+          <span ref="featureProject" class="sm:text-[1.7rem] text-[10px]" >
             FEATURED
             PROJECTS (4)
           </span>
-          <span ref="associatedOne" class="tracking-normal text-[1.7rem] custom-font capitalize flex items-center gap-1.5">
-            <img src="@/assets/teksyo_logo.jfif" class="size-12" alt="">
+          <span ref="associatedOne" class="tracking-normal sm:text-[1.7rem] text-[10px] custom-font capitalize flex items-center gap-1.5">
+            <img src="@/assets/teksyo_logo.jfif" class="sm:size-12 size-16" alt="">
             <a href="https://www.teksyo.com/" target="_blank">Associated with Teksyo (Pvt) Ltd</a>
           </span>
         </div>
@@ -125,9 +153,9 @@
       </div>
 
       <!-- Project 2 -->
-      <div class="relative overflow-hidden py-20">
-        <span ref="associatedTwo" class="absolute top-2 tracking-normal text-[1.7rem] custom-font capitalize flex items-center gap-1.5">
-          <img src="@/assets/teksyo_logo.jfif" class="size-12" alt="">
+      <div class="relative overflow-hidden sm:py-20 py-[24rem]">
+        <span ref="associatedTwo" class="absolute top-2 tracking-normal sm:text-[1.7rem] text-[10px] custom-font capitalize flex items-center gap-1.5">
+          <img src="@/assets/teksyo_logo.jfif" class="sm:size-12 size-16" alt="">
           <a href="https://www.teksyo.com/" target="_blank">Associated with Teksyo (Pvt) Ltd</a>
         </span>
         <h2 ref="portfolioHeadingRightOne" class="whitespace-nowrap">
@@ -141,9 +169,9 @@
       </div>
 
       <!-- Project 3 -->
-      <div class="relative overflow-hidden py-20">
-        <span ref="associatedThree" class="absolute right-0 top-2 tracking-normal text-[1.7rem] custom-font capitalize flex items-center gap-1.5">
-          <img src="@/assets/teksyo_logo.jfif" class="size-12" alt="">
+      <div class="relative overflow-hidden sm:py-20 py-[24rem]">
+        <span ref="associatedThree" class="absolute right-0 top-2 tracking-normal sm:text-[1.7rem] text-[10px] custom-font capitalize flex items-center gap-1.5">
+          <img src="@/assets/teksyo_logo.jfif" class="sm:size-12 size-16" alt="">
           <a href="https://www.teksyo.com/" target="_blank">Associated with Teksyo (Pvt) Ltd</a>
         </span>
         <h2 ref="portfolioHeadingLeftTwo" class="whitespace-nowrap">
@@ -157,14 +185,15 @@
       </div>
 
       <!-- Project 4 -->
-      <div class="relative overflow-hidden py-20">
+      <div class="relative overflow-hidden sm:py-20 py-[24rem]">
         <h2 ref="portfolioHeadingRightTwo" class="whitespace-nowrap">
           <a href="https://abdullah-suri.netlify.app/" target="_blank" class="custom-link transition-all duration-500">My Old Portfolio - Abdullah Suri</a>
         </h2>
       </div>
     </section>
+    
     <!-- Contact Section -->
-    <section class="px-16 text-center overflow-hidden mt-52">
+    <section class="px-16 text-center overflow-hidden sm:mt-52 mt-[62rem]">
       <div class="hero-para custom-font !leading-tight mb-16">Got a question, proposal or project or want to work <br> together on something? Feel free to reach out.</div>
       
       <div class="overflow-hidden">
