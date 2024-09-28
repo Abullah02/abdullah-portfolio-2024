@@ -13,8 +13,8 @@ body, html {
     cursor: none;
 }
 a {
-  user-select: none;
-    cursor: none;
+  user-select: none !important;
+  cursor: none !important;
 }
 body {
     font-size: 1.6rem;
@@ -64,7 +64,7 @@ html {
     text-decoration: none;
     font-size: 14px;
     font-weight: bold;
-    color: var(--text-color);
+    color: #777;
     letter-spacing: 2px;
     transition: all 0.3s ease;
   }
@@ -83,7 +83,7 @@ html {
     position: absolute;
     height: 3px;
     border-radius: 2px;
-    background: var(--text-color);
+    background: var(--border-color);
     transition: all 0.5s ease;
   }
   .button::before {
@@ -121,7 +121,7 @@ html {
     height: 100%;
     box-sizing: border-box;
     border-radius: 300px;
-    border: solid 3px var(--text-color);
+    border: solid 3px var(--border-color);
   }
   .button__line:nth-child(1),
   .button__line:nth-child(1)::before {
@@ -312,7 +312,10 @@ html {
   .email-btn .button__drow2 {
     left: 150px;
     top: 25px;
-}
+  }
+  .button:hover {
+    border-color: var(--border-color); /* Change border color on hover */
+  }
   /* ================= Animated Button CSS End ================ */
 
   /* ================ Scroll Down Arrow Animation =============== */
@@ -620,11 +623,19 @@ html {
   }
   
   .custom-link:hover::before {
-    transition: transform 300ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    /* transition: transform 300ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
     transform-origin: left;
     background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200%25' height='100%25'%3E%3Cdefs%3E%3Cstyle%3E .wave%7B animation:wave 1s ease-in-out infinite alternate; animation-delay:-0.25s; stroke:%23e0ff00; stroke-width:2; stroke-linecap:square; %7D @keyframes wave%7B to%7B d:path('M 0 40 Q 20 42.5 40 40 Q 60 37.5 80 40'); %7D %7D %3C/style%3E%3C/defs%3E%3Cpattern id='wavePattern' x='0' y='0' width='80' height='80' patternUnits='userSpaceOnUse'%3E%3Cpath fill='none' class='wave' d='M 0 40 Q 20 37.5 40 40 Q 60 42.5 80 40' /%3E%3C/pattern%3E%3Crect x='0' y='0' width='100%25' height='100%25' fill='url(%23wavePattern)'%3E%3C/rect%3E%3C/svg%3E") 0px 50%/80px 80px repeat-x;
     -webkit-animation: waving 3s linear infinite;
             animation: waving 3s linear infinite;
+    transform: scaleX(1); */
+    transition: transform 300ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform-origin: left;
+    background-size: 80px 80px;
+    background-repeat: repeat-x;
+    background-position: 0px 50%;
+    -webkit-animation: waving 3s linear infinite;
+    animation: waving 3s linear infinite;
     transform: scaleX(1);
   }
   
@@ -644,6 +655,7 @@ html {
     z-index: -1;
     transform: scaleX(0);
     transition: transform 300ms cubic-bezier(0.175, 0.885, 0.32, 1);
+    background: var(--custom-background);
     transform-origin: right;
   }
   /* ================ Custom Link Animation End =============== */
@@ -674,10 +686,6 @@ html {
   }
 
   .theme-switch, .theme-switch *, .theme-switch *::before, .theme-switch *::after {
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
     font-size: var(--toggle-size);
   }
 
@@ -687,7 +695,6 @@ html {
     background-color: var(--container-light-bg);
     border-radius: var(--container-radius);
     overflow: hidden;
-    cursor: pointer;
     -webkit-box-shadow: 0em -0.062em 0.062em rgba(0, 0, 0, 0.25), 0em 0.062em 0.125em rgba(255, 255, 255, 0.94);
     box-shadow: 0em -0.062em 0.062em rgba(0, 0, 0, 0.25), 0em 0.062em 0.125em rgba(255, 255, 255, 0.94);
     -webkit-transition: var(--transition);
@@ -726,11 +733,9 @@ html {
     -webkit-transition: var(--circle-transition);
     -o-transition: var(--circle-transition);
     transition: var(--circle-transition);
-    pointer-events: none;
   }
 
   .theme-switch__sun-moon-container {
-    pointer-events: auto;
     position: relative;
     z-index: 2;
     width: var(--sun-moon-diameter);
