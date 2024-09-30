@@ -67,13 +67,24 @@
 
     <!-- Hero Section Mobile -->
     <section class="relative overflow-hidden px-16 sm:hidden text-[160px] leading-[.9] tracking-[-.05em] break-words">
-      Front
-      <br>
-      <span v-for="letter in dashes">{{ letter }}</span>  End
-      <br>
-      developer
+      <div ref="initialHeagingHide" class="!overflow-hidden">
+        <div ref="headingContainer" class="relative">
+          <span ref="heading" id="HeroRightHeading">Front</span>
+          <br>
+        </div>
+        <div ref="headingContainerTwo" class="relative overflow-hidden">
+          <span ref="heading" id="frontendSeperator">
+            <span v-for="letter in dashes">{{ letter }}</span>  End
+          </span>
+        </div>
+        <div ref="headingContainerThree" class="overflow-hidden">
+          <span ref="heading" id="HeroLeftHeading">
+            dev
+          </span>
+        </div>
+      </div>
 
-      <div class="custom-font text-regular-text-color text-[17px] tracking-[0px] leading-relaxed mt-[32rem]">
+      <div ref="mobileAbout" class="custom-font text-regular-text-color text-[17px] tracking-[0px] leading-relaxed mt-[32rem]">
         <span class="uppercase text-text-color mr-4">About</span>
         I am a developer based in Karachi, Pakistan, focused on crafting engaging and interactive digital experiences on the web. With a passion for innovation, I have collaborated with a diverse range of brands and industry leaders to deliver exceptional results.
         <span class="flex items-center justify-between pt-[12rem] pr-10">
@@ -111,7 +122,7 @@
             <a href="https://www.teksyo.com/" target="_blank" class="hover-target">Associated with Teksyo (Pvt) Ltd</a>
           </span>
         </div>
-        <h2 ref="portfolioHeadingLeftOne" class="whitespace-nowrap">
+        <h2 ref="portfolioHeadingLeftOne" class="sm:whitespace-nowrap">
           <a href="https://elefant.net.ai/" target="_blank" :style="{ '--custom-background': svgBackground }" class="custom-link transition-all duration-500">
             Elegant Elefant: law for all. We got an elefant's memory for the law, and can't wait to help you access it!
           </a>
@@ -130,7 +141,7 @@
           <img src="@/assets/teksyo_logo.jfif" class="sm:size-9 size-16 rounded-lg" alt="">
           <a href="https://www.teksyo.com/" target="_blank" class="hover-target">Associated with Teksyo (Pvt) Ltd</a>
         </span>
-        <h2 ref="portfolioHeadingRightOne" class="whitespace-nowrap">
+        <h2 ref="portfolioHeadingRightOne" class="sm:whitespace-nowrap">
           <a href="https://www.teksyo.com/" target="_blank" :style="{ '--custom-background': svgBackground }" class="custom-link transition-all duration-500">Teksyo - Creating Million-Dollar Websites & AI SaaS for Startup Ideas</a>
         </h2>
       </div>
@@ -146,7 +157,7 @@
           <img src="@/assets/teksyo_logo.jfif" class="sm:size-9 size-16 rounded-lg" alt="">
           <a href="https://www.teksyo.com/" target="_blank" class="hover-target">Associated with Teksyo (Pvt) Ltd</a>
         </span>
-        <h2 ref="portfolioHeadingLeftTwo" class="whitespace-nowrap">
+        <h2 ref="portfolioHeadingLeftTwo" class="sm:whitespace-nowrap">
           <a href="https://platypusdreaming.com.au/" target="_blank" :style="{ '--custom-background': svgBackground }" class="custom-link transition-all duration-500 ">platypus dreaming - Chanting of the Rainforest</a>
         </h2>
       </div>
@@ -158,7 +169,7 @@
 
       <!-- Project 4 -->
       <div class="relative overflow-hidden sm:py-20 py-[24rem]">
-        <h2 ref="portfolioHeadingRightTwo" class="whitespace-nowrap">
+        <h2 ref="portfolioHeadingRightTwo" class="sm:whitespace-nowrap">
           <a href="https://abdullah-suri.netlify.app/" target="_blank" :style="{ '--custom-background': svgBackground }" class="custom-link transition-all duration-500">My Old Portfolio - Abdullah Suri</a>
         </h2>
       </div>
@@ -173,7 +184,7 @@
         <div class="relative w-full h-px bg-transparent">
           <span ref="contactHeadingLinesOne" class="absolute h-px w-full bg-[#777] origin-left left-0"></span>
         </div>
-        <h2 ref="contactHeading" class="whitespace-nowrap sm:!my-36 !my-[24rem] custom-link">"LET’S TALK — LET’S COLLABORATE — SAY HELLO — WANNA BE STARTING SOMETHING?"</h2>
+        <h2 ref="contactHeading" class="whitespace-nowrap sm:!my-36 !my-[24rem] custom-link" :style="{ '--custom-background': svgBackground }">"LET’S TALK — LET’S COLLABORATE — SAY HELLO — WANNA BE STARTING SOMETHING?"</h2>
         <!-- Right ro Left bar -->
         <div class="relative w-full h-px bg-transparent">
           <span ref="contactHeadingLinesTwo" class="absolute h-px w-full bg-[#777] origin-right left-0"></span>
@@ -684,12 +695,34 @@ export default {
       );
 
       gsap.fromTo(
+        this.$refs.headingContainerThree,
+        { y: 400 }, 
+        {
+          y: 0, 
+          delay: .2,
+          duration: 1.3,
+          ease: "power3.out",
+        }
+      );
+
+      gsap.fromTo(
         this.$refs.header,
         { y: -400, opacity: 0 }, 
         {
           y: 0, 
           opacity: 1, 
           duration: .9,
+          ease: "power3.out",
+        }
+      );
+
+      gsap.fromTo(
+        this.$refs.mobileAbout,
+        { y: 400, opacity: 0 }, 
+        {
+          y: 0, 
+          opacity: 1, 
+          duration: 2.6,
           ease: "power3.out",
         }
       );
