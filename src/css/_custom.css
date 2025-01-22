@@ -9,8 +9,8 @@ body, html {
     font-weight: 100;
     color: var(--text-color);
     background-color: var(--body-background);
-    /* user-select: none;
-    cursor: none; */
+    user-select: none;
+    cursor: none;
 }
 a {
   user-select: none !important;
