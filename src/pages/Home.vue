@@ -12,7 +12,7 @@
       </div>
       <div class="flex items-center gap-2.5">
         <div class="button-container">
-          <a href="Abdullah-Resume.pdf" download class="button type--C">
+          <a href="Abdullah_Resume.pdf" download class="button type--C">
             <div class="button__line"></div>
             <div class="button__line"></div>
             <span class="button__text">DOWNLOAD RESUME</span>
@@ -67,7 +67,7 @@
 
     <!-- Hero Section Mobile -->
     <section class="relative overflow-hidden px-16 sm:hidden text-[160px] leading-[.9] tracking-[-.05em] break-words">
-      <div ref="initialHeagingHide" class="!overflow-hidden">
+      <div ref="initialHeagingHideMobile" class="!overflow-hidden">
         <div ref="headingContainer" class="relative">
           <span ref="heading" id="HeroRightHeading">Front</span>
           <br>
@@ -104,31 +104,36 @@
     </section>
 
     <!-- Portfolio Section -->
-    <section class="px-16 uppercase sm:mt-0 mt-[42rem]">
+    <section class="relative z-[2] px-16 uppercase sm:mt-0 mt-[42rem]">
       <!-- Left ro right bar -->
       <div class="relative w-full h-px bg-transparent">
         <span ref="leftToRightLineOne" class="absolute h-px w-full bg-[#777] origin-left"></span>
-      </div>
+      </div>      
 
-      <!-- project 1  -->
-      <div class="relative overflow-hidden sm:py-20 py-[24rem]" >
+      <!-- Test Gsap Image reveal overflow-hidden -->
+      <div class="relative  sm:py-20 py-[24rem]">
         <div class="absolute right-0 top-2 w-full custom-font flex items-center justify-between">
-          <span ref="featureProject" class="sm:text-[1.7rem] text-[10px]" >
-            FEATURED
-            PROJECTS (4)
+          <span ref="featureProject" class="sm:text-[1.7rem] text-[10px]">
+            FEATURED PROJECTS (4)
           </span>
           <span ref="associatedOne" class="tracking-normal sm:text-[1.7rem] text-[10px] custom-font capitalize flex items-center gap-1.5">
-            <img src="@/assets/teksyo_logo.jfif" class="sm:size-9 size-16 rounded-lg" alt="">
-            <a href="https://www.teksyo.com/" target="_blank" class="hover-target">Associated with Teksyo (Pvt) Ltd</a>
+            <img src="@/assets/teksyo_logo.jfif" class="sm:size-9 size-16 rounded-lg" alt=""/>
+            <a href="https://www.teksyo.com/" target="_blank" class="hover-target">
+              Associated with Teksyo (Pvt) Ltd
+            </a>
           </span>
         </div>
-        <h2 ref="portfolioHeadingLeftOne" class="sm:whitespace-nowrap">
-          <a href="https://elefant.net.ai/" target="_blank" :style="{ '--custom-background': svgBackground }" class="custom-link transition-all duration-500">
-            Elegant Elefant: law for all. We got an elefant's memory for the law, and can't wait to help you access it!
-          </a>
-        </h2>
+        <div class="relative group">
+          <h2 ref="portfolioHeadingLeftOne" class="sm:whitespace-nowrap">
+            <a href="https://elefant.net.ai/" target="_blank" :style="{ '--custom-background': svgBackground }" class="custom-link transition-all duration-500">
+              Elegant Elefant: law for all. We got an elefant's memory for the law,
+              and can't wait to help you access it!
+            </a>
+          </h2>
+            <div ref="revealImage" class="bg-elefant absolute top-0 left-0 w-full z-[9] max-w-[350px] min-h-[450px] h-full rounded-lg object-cover bg-bottom opacity-0 pointer-events-none reveal-image"></div>
+        </div>
       </div>
-      
+
 
       <!-- Left ro right bar -->
       <div class="relative w-full h-px bg-transparent">
@@ -136,14 +141,17 @@
       </div>
 
       <!-- Project 2 -->
-      <div class="relative overflow-hidden sm:py-20 py-[24rem]">
+      <div class="relative  sm:py-20 py-[24rem]">
         <span ref="associatedTwo" class="absolute top-2 tracking-normal sm:text-[1.7rem] text-[10px] custom-font capitalize flex items-center gap-1.5 hover-target">
           <img src="@/assets/teksyo_logo.jfif" class="sm:size-9 size-16 rounded-lg" alt="">
           <a href="https://www.teksyo.com/" target="_blank" class="hover-target">Associated with Teksyo (Pvt) Ltd</a>
         </span>
-        <h2 ref="portfolioHeadingRightOne" class="sm:whitespace-nowrap">
-          <a href="https://www.teksyo.com/" target="_blank" :style="{ '--custom-background': svgBackground }" class="custom-link transition-all duration-500">Teksyo - Creating Million-Dollar Websites & AI SaaS for Startup Ideas</a>
-        </h2>
+        <div class="relative group">
+          <h2 ref="portfolioHeadingRightOne" class="sm:whitespace-nowrap">
+            <a href="https://www.teksyo.com/" target="_blank" :style="{ '--custom-background': svgBackground }" class="custom-link transition-all duration-500">Teksyo - Creating Million-Dollar Websites & AI SaaS for Startup Ideas</a>
+          </h2>
+          <div ref="revealImageTwo" class="bg-teksyo absolute top-0 left-0 w-full max-w-[350px] min-h-[450px] z-[9] h-full rounded-lg object-cover bg-bottom opacity-0 pointer-events-none reveal-image"></div>
+        </div>
       </div>
       
       <!-- Left ro right bar -->
@@ -152,14 +160,17 @@
       </div>
 
       <!-- Project 3 -->
-      <div class="relative overflow-hidden sm:py-20 py-[24rem]">
+      <div class="relative sm:py-20 py-[24rem]">
         <span ref="associatedThree" class="absolute right-0 top-2 tracking-normal sm:text-[1.7rem] text-[10px] custom-font capitalize flex items-center gap-1.5">
           <img src="@/assets/teksyo_logo.jfif" class="sm:size-9 size-16 rounded-lg" alt="">
           <a href="https://www.teksyo.com/" target="_blank" class="hover-target">Associated with Teksyo (Pvt) Ltd</a>
         </span>
-        <h2 ref="portfolioHeadingLeftTwo" class="sm:whitespace-nowrap">
-          <a href="https://platypusdreaming.com.au/" target="_blank" :style="{ '--custom-background': svgBackground }" class="custom-link transition-all duration-500 ">platypus dreaming - Chanting of the Rainforest</a>
-        </h2>
+        <div class="relative group">
+          <h2 ref="portfolioHeadingLeftTwo" class="sm:whitespace-nowrap">
+            <a href="https://platypusdreaming.com.au/" target="_blank" :style="{ '--custom-background': svgBackground }" class="custom-link transition-all duration-500 ">platypus dreaming - Chanting of the Rainforest</a>
+          </h2>
+          <div ref="revealImageThree" class="bg-platypus absolute top-0 left-0 w-full max-w-[350px] min-h-[450px] z-[9] h-full rounded-lg object-cover bg-bottom opacity-0 pointer-events-none reveal-image"></div>
+        </div>
       </div>
 
       <!-- Left ro right bar -->
@@ -168,10 +179,11 @@
       </div>
 
       <!-- Project 4 -->
-      <div class="relative overflow-hidden sm:py-20 py-[24rem]">
+      <div class="relative sm:py-20 py-[24rem]">
         <h2 ref="portfolioHeadingRightTwo" class="sm:whitespace-nowrap">
           <a href="https://abdullah-suri.netlify.app/" target="_blank" :style="{ '--custom-background': svgBackground }" class="custom-link transition-all duration-500">My Old Portfolio - Abdullah Suri</a>
         </h2>
+        <div ref="revealImageFour" class="bg-abdullah-portfolio absolute top-0 left-0 w-full max-w-[350px] min-h-[450px] z-[9] h-full rounded-lg object-cover bg-bottom opacity-0 pointer-events-none reveal-image"></div>
       </div>
     </section>
     
@@ -199,13 +211,13 @@
             <div class="flex items-center justify-between sm:mt-0 mt-10">
               <div class="hero-para max-sm:text-[12px]">Karachi, PK <span class="text-regular-text-color ml-1">{{ getPakistanTime() }}</span> </div>
               <div class="flex items-center gap-5">
-                <a href="https://www.linkedin.com/in/abdullah-suri-a7b012269/" class="hover-target flex items-center justify-center sm:size-16 size-36 border dark:border-slate-50/60 border-gray-700 rounded-full hover:border-[#313c0e] hover:bg-[#313c0e] transition-all duration-500 group">
+                <a target="_blank" href="https://www.linkedin.com/in/abdullah-suri-a7b012269/" class="hover-target flex items-center justify-center sm:size-16 size-36 border dark:border-slate-50/60 border-gray-700 rounded-full hover:border-[#313c0e] hover:bg-[#313c0e] transition-all duration-500 group">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="hover-target sm:size-8 size-16 group-hover:text-white group-hover:scale-125" fill="currentColor"><path d="M6.94048 4.99993C6.94011 5.81424 6.44608 6.54702 5.69134 6.85273C4.9366 7.15845 4.07187 6.97605 3.5049 6.39155C2.93793 5.80704 2.78195 4.93715 3.1105 4.19207C3.43906 3.44699 4.18654 2.9755 5.00048 2.99993C6.08155 3.03238 6.94097 3.91837 6.94048 4.99993ZM7.00048 8.47993H3.00048V20.9999H7.00048V8.47993ZM13.3205 8.47993H9.34048V20.9999H13.2805V14.4299C13.2805 10.7699 18.0505 10.4299 18.0505 14.4299V20.9999H22.0005V13.0699C22.0005 6.89993 14.9405 7.12993 13.2805 10.1599L13.3205 8.47993Z"></path></svg>
                 </a>
-                <a href="https://github.com/Abdullah-Suri" class="hover-target flex items-center justify-center sm:size-16 size-36 border dark:border-slate-50/60 border-gray-700 rounded-full hover:border-[#313c0e] hover:bg-[#313c0e] transition-all duration-500 group">
+                <a target="_blank" href="https://github.com/Abdullah-Suri" class="hover-target flex items-center justify-center sm:size-16 size-36 border dark:border-slate-50/60 border-gray-700 rounded-full hover:border-[#313c0e] hover:bg-[#313c0e] transition-all duration-500 group">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="hover-target sm:size-8 size-16 group-hover:text-white group-hover:scale-125" fill="currentColor"><path d="M12.001 2C6.47598 2 2.00098 6.475 2.00098 12C2.00098 16.425 4.86348 20.1625 8.83848 21.4875C9.33848 21.575 9.52598 21.275 9.52598 21.0125C9.52598 20.775 9.51348 19.9875 9.51348 19.15C7.00098 19.6125 6.35098 18.5375 6.15098 17.975C6.03848 17.6875 5.55098 16.8 5.12598 16.5625C4.77598 16.375 4.27598 15.9125 5.11348 15.9C5.90098 15.8875 6.46348 16.625 6.65098 16.925C7.55098 18.4375 8.98848 18.0125 9.56348 17.75C9.65098 17.1 9.91348 16.6625 10.201 16.4125C7.97598 16.1625 5.65098 15.3 5.65098 11.475C5.65098 10.3875 6.03848 9.4875 6.67598 8.7875C6.57598 8.5375 6.22598 7.5125 6.77598 6.1375C6.77598 6.1375 7.61348 5.875 9.52598 7.1625C10.326 6.9375 11.176 6.825 12.026 6.825C12.876 6.825 13.726 6.9375 14.526 7.1625C16.4385 5.8625 17.276 6.1375 17.276 6.1375C17.826 7.5125 17.476 8.5375 17.376 8.7875C18.0135 9.4875 18.401 10.375 18.401 11.475C18.401 15.3125 16.0635 16.1625 13.8385 16.4125C14.201 16.725 14.5135 17.325 14.5135 18.2625C14.5135 19.6 14.501 20.675 14.501 21.0125C14.501 21.275 14.6885 21.5875 15.1885 21.4875C19.259 20.1133 21.9999 16.2963 22.001 12C22.001 6.475 17.526 2 12.001 2Z"></path></svg>
                 </a>
-                <a href="https://www.instagram.com/abdullah._.suri/" class="hover-target flex items-center justify-center sm:size-16 size-36 border dark:border-slate-50/60 border-gray-700 rounded-full hover:border-[#313c0e] hover:bg-[#313c0e] transition-all duration-500 group">
+                <a target="_blank" href="https://www.instagram.com/abdullah._.suri/" class="hover-target flex items-center justify-center sm:size-16 size-36 border dark:border-slate-50/60 border-gray-700 rounded-full hover:border-[#313c0e] hover:bg-[#313c0e] transition-all duration-500 group">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="hover-target sm:size-8 size-16 group-hover:text-white group-hover:scale-125" fill="currentColor"><path d="M13.0281 2.00073C14.1535 2.00259 14.7238 2.00855 15.2166 2.02322L15.4107 2.02956C15.6349 2.03753 15.8561 2.04753 16.1228 2.06003C17.1869 2.1092 17.9128 2.27753 18.5503 2.52503C19.2094 2.7792 19.7661 3.12253 20.3219 3.67837C20.8769 4.2342 21.2203 4.79253 21.4753 5.45003C21.7219 6.0867 21.8903 6.81337 21.9403 7.87753C21.9522 8.1442 21.9618 8.3654 21.9697 8.58964L21.976 8.78373C21.9906 9.27647 21.9973 9.84686 21.9994 10.9723L22.0002 11.7179C22.0003 11.809 22.0003 11.903 22.0003 12L22.0002 12.2821L21.9996 13.0278C21.9977 14.1532 21.9918 14.7236 21.9771 15.2163L21.9707 15.4104C21.9628 15.6347 21.9528 15.8559 21.9403 16.1225C21.8911 17.1867 21.7219 17.9125 21.4753 18.55C21.2211 19.2092 20.8769 19.7659 20.3219 20.3217C19.7661 20.8767 19.2069 21.22 18.5503 21.475C17.9128 21.7217 17.1869 21.89 16.1228 21.94C15.8561 21.9519 15.6349 21.9616 15.4107 21.9694L15.2166 21.9757C14.7238 21.9904 14.1535 21.997 13.0281 21.9992L12.2824 22C12.1913 22 12.0973 22 12.0003 22L11.7182 22L10.9725 21.9993C9.8471 21.9975 9.27672 21.9915 8.78397 21.9768L8.58989 21.9705C8.36564 21.9625 8.14444 21.9525 7.87778 21.94C6.81361 21.8909 6.08861 21.7217 5.45028 21.475C4.79194 21.2209 4.23444 20.8767 3.67861 20.3217C3.12278 19.7659 2.78028 19.2067 2.52528 18.55C2.27778 17.9125 2.11028 17.1867 2.06028 16.1225C2.0484 15.8559 2.03871 15.6347 2.03086 15.4104L2.02457 15.2163C2.00994 14.7236 2.00327 14.1532 2.00111 13.0278L2.00098 10.9723C2.00284 9.84686 2.00879 9.27647 2.02346 8.78373L2.02981 8.58964C2.03778 8.3654 2.04778 8.1442 2.06028 7.87753C2.10944 6.81253 2.27778 6.08753 2.52528 5.45003C2.77944 4.7917 3.12278 4.2342 3.67861 3.67837C4.23444 3.12253 4.79278 2.78003 5.45028 2.52503C6.08778 2.27753 6.81278 2.11003 7.87778 2.06003C8.14444 2.04816 8.36564 2.03847 8.58989 2.03062L8.78397 2.02433C9.27672 2.00969 9.8471 2.00302 10.9725 2.00086L13.0281 2.00073ZM12.0003 7.00003C9.23738 7.00003 7.00028 9.23956 7.00028 12C7.00028 14.7629 9.23981 17 12.0003 17C14.7632 17 17.0003 14.7605 17.0003 12C17.0003 9.23713 14.7607 7.00003 12.0003 7.00003ZM12.0003 9.00003C13.6572 9.00003 15.0003 10.3427 15.0003 12C15.0003 13.6569 13.6576 15 12.0003 15C10.3434 15 9.00028 13.6574 9.00028 12C9.00028 10.3431 10.3429 9.00003 12.0003 9.00003ZM17.2503 5.50003C16.561 5.50003 16.0003 6.05994 16.0003 6.74918C16.0003 7.43843 16.5602 7.9992 17.2503 7.9992C17.9395 7.9992 18.5003 7.4393 18.5003 6.74918C18.5003 6.05994 17.9386 5.49917 17.2503 5.50003Z"></path></svg>
                 </a>
               </div>
@@ -251,10 +263,6 @@ gsap.registerPlugin(ScrollTrigger);
 export default {
   data() {
     return {
-      isLoading: false,
-      loadingText: 'LOADING',
-      firstNumber: ['5', '9', 'A'],
-      secondNumber: ['0', '9', 'S'],
       frontLetters: ['F', 'R', 'O', 'N', 'T'],
       endLetters: ['E', 'N', 'D'],
       devLetters: ['D', 'E', 'V', 'E', 'L', 'O', 'P', 'E', 'R'],
@@ -262,14 +270,8 @@ export default {
       isDarkTheme: true,
     }
   },
-  components: {
-    Header,
-    SiteLoader
-  },
+  components: { Header, SiteLoader },
   computed: {
-    splitLoadingText() {
-      return this.loadingText.split('');
-    },
     svgBackground() {
       const svgColor = this.isDarkTheme ? '#e0ff00' : '#313c0e';
       return `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200%25' height='100%25'%3E%3Cdefs%3E%3Cstyle%3E .wave%7B animation:wave 1s ease-in-out infinite alternate; animation-delay:-0.25s; stroke:${encodeURIComponent(svgColor)}; stroke-width:2; stroke-linecap:square; %7D @keyframes wave%7B to%7B d:path('M 0 40 Q 20 42.5 40 40 Q 60 37.5 80 40'); %7D %7D %3C/style%3E%3C/defs%3E%3Cpattern id='wavePattern' x='0' y='0' width='80' height='80' patternUnits='userSpaceOnUse'%3E%3Cpath fill='none' class='wave' d='M 0 40 Q 20 37.5 40 40 Q 60 42.5 80 40' /%3E%3C/pattern%3E%3Crect x='0' y='0' width='100%25' height='100%25' fill='url(%23wavePattern)'%3E%3C/rect%3E%3C/svg%3E")`;
@@ -286,6 +288,34 @@ export default {
     });
   },
   methods: {
+    handleMouseMove(event, imageElement) {
+    // Get viewport dimensions
+    const viewportWidth = window.innerWidth;
+    const viewportHeight = window.innerHeight;
+
+    // Adjust position with constraints
+    const imageWidth = imageElement.offsetWidth;
+    const imageHeight = imageElement.offsetHeight;
+
+    const x = Math.min(
+      Math.max(event.clientX - imageWidth / 2, 10), // Minimum margin from left
+      viewportWidth - imageWidth - 10 // Maximum margin from right
+    );
+
+    const y = Math.min(
+      Math.max(event.clientY - imageHeight / 2, 10), // Minimum margin from top
+      viewportHeight - imageHeight - 700 // Maximum margin from bottom
+    );
+
+    // Smoothly update image position
+    gsap.to(imageElement, {
+      x,
+      y,
+      duration: 0.1,
+      ease: "power2.out",
+    });
+    },
+
     initGsapAnimation() {
       const logoDash = document.querySelector("#logo-element");
 
@@ -330,6 +360,23 @@ export default {
       // Overflow Show Hide 
       gsap.fromTo(
         this.$refs.initialHeagingHide,
+        { overflow: 'hidden' },
+        {
+          overflow: 'visible',
+          duration: 1,
+          scrollTrigger: {
+            trigger: this.$refs.initialHeagingHide,
+            start: "top 15%",
+            end: "bottom top", 
+            scrub: true,
+            markers: false,
+          }
+        }
+      );
+
+      // Overflow Show Hide 
+      gsap.fromTo(
+        this.$refs.initialHeagingHideMobile,
         { overflow: 'hidden' },
         {
           overflow: 'visible',
@@ -551,20 +598,19 @@ export default {
         }
       );
 
-      const marqueeSpeed = 10;
-
+      const marqueeSpeed = 20; 
       const contactHeading = this.$refs.contactHeading;
-      const width = contactHeading.offsetWidth;
+      const contentWidth = contactHeading.offsetWidth;
 
-      // continuous scroll effect
+      contactHeading.innerHTML += contactHeading.innerHTML;
+
+      const totalDistance = contentWidth * 4;
+
       gsap.to(contactHeading, {
-        xPercent: -100, // Moves it to the left until it's out of view
-        repeat: -1, // Infinite scroll
-        duration: marqueeSpeed, // Speed of the scroll
-        ease: "none", // No easing for smooth linear scrolling
-        modifiers: {
-          xPercent: gsap.utils.unitize(value => parseFloat(value) % 100) // Keeps the scroll seamless
-        }
+        x: `-=${contentWidth}`, 
+        duration: marqueeSpeed, 
+        ease: "none",
+        repeat: -1,
       });
 
       // Animate portfolio bars (Left to Right One)
@@ -619,6 +665,53 @@ export default {
           }
         }
       );
+      
+      const elements = [
+        {
+          text: this.$refs.portfolioHeadingLeftOne,
+          image: this.$refs.revealImage,
+        },
+        {
+          text: this.$refs.portfolioHeadingRightOne,
+          image: this.$refs.revealImageTwo,
+        },
+        {
+          text: this.$refs.portfolioHeadingLeftTwo,
+          image: this.$refs.revealImageThree,
+        },
+        {
+          text: this.$refs.portfolioHeadingRightTwo,
+          image: this.$refs.revealImageFour,
+        },
+      ];
+
+      elements.forEach(({ text, image }) => {
+        // Mouse enter event
+        text.addEventListener("mouseenter", () => {
+          gsap.to(image, {
+            opacity: 1,
+            scale: 1,
+            duration: 0.3,
+            ease: "power2.out",
+          });
+
+          // Bind handleMouseMove dynamically
+          window.addEventListener("mousemove", (event) => this.handleMouseMove(event, image));
+        });
+
+        // Mouse leave event
+        text.addEventListener("mouseleave", () => {
+          gsap.to(image, {
+            opacity: 0,
+            scale: 1.2,
+            duration: 0.3,
+            ease: "power2.out",
+          });
+
+          // Remove event listener for mousemove
+          window.removeEventListener("mousemove", (event) => this.handleMouseMove(event, image));
+        });
+      });
 
       gsap.fromTo(
         this.$refs.associatedTwo,

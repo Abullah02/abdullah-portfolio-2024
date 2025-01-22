@@ -9,8 +9,8 @@ body, html {
     font-weight: 100;
     color: var(--text-color);
     background-color: var(--body-background);
-    user-select: none;
-    cursor: none;
+    /* user-select: none;
+    cursor: none; */
 }
 a {
   user-select: none !important;
@@ -74,6 +74,7 @@ html {
     align-items: center;
     width: 100%;
     height: 100%;
+    font-size: 18px;
   }
   .button::before,
   .button::after,
@@ -870,5 +871,36 @@ html {
   }
   /* ================ Media Queries End =============== */
 
+  .reveal-image {
+    opacity: 0;
+    transform: scale(1.2);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    pointer-events: none;
+  }
 
-
+  .bg-elefant, .bg-teksyo, .bg-platypus {
+    background-image: url('../assets/elefant-project.png');
+    background-size: cover;
+    background-position: top;
+    animation: bg-slide 6s infinite alternate-reverse;
+  }
+  .bg-teksyo {
+    background-image: url('../assets/teksyo_full_page.png');
+  }
+  .bg-platypus {
+    background-image: url('../assets/platypus_full_page.png');
+  }
+  .bg-abdullah-portfolio {
+    background-image: url('../assets/old-abdullah-portfolio.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  
+  @keyframes bg-slide {
+    from {
+      background-position: top;
+    }
+    to {
+      background-position: bottom;
+    }
+  }
